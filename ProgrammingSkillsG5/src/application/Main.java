@@ -12,7 +12,6 @@ public class Main {
 	
     public static void main(String[] args) {
     	
-    	
     	/* initalise new landscape with parameters from command line */
     	//Landscape landscape = Parser.createLandscapeFromCommandLine();
     	
