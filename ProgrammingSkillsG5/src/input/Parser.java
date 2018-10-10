@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.File;
 import java.util.Scanner;
 
+import world.GridSquare;
 import world.Landscape;
 
 public class Parser {
@@ -69,7 +70,7 @@ public class Parser {
 			int length = Integer.parseInt(firstline.split(" ")[1]);
 			
 			//initialise landscape arrays
-			landscape.currentGrid = new int[length][width];
+			landscape.currentGrid = new GridSquare[length][width];
 			
 			String nextline[];
 			
@@ -79,7 +80,7 @@ public class Parser {
 				nextline = b_read.readLine().split(" ");
 				
 				for(int j = 0; j < width; j++) {
-					landscape.currentGrid[i][j] = Integer.parseInt(nextline[j]);		
+					landscape.currentGrid[i][j] = GridSquare.generateGridSquareFromStr(nextline[j]);
 				}
 				
 			}//for
