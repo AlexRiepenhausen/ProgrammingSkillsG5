@@ -6,22 +6,22 @@ public class GridSquare {
 	GridSquareType gridSquareType;
 	
 	/** The density of hares (H) */
-	int hares;
+	double hares;
 	
 	/** The density of pumas (P) */
-	int pumas;
+	double pumas;
 	
 	/**
 	 * Generate a Grid Square object and if the square is Land 
 	 * the densities of H and P will be randomly initialized in 
-	 * the range 0 to 5 
+	 * the range 0.0 to 5.0 
 	 * @param gridSquareType The type of the grid square Land(1) or Water(0)
 	 */
 	public GridSquare(GridSquareType gridSquareType) {
 		this.gridSquareType = gridSquareType;
 		if (gridSquareType == GridSquareType.Land) {
-			this.hares = (int) Math.round(Math.random() * 5);
-			this.pumas = (int) Math.round(Math.random() * 5);
+			this.hares = Math.random() * 5;
+			this.pumas = Math.random() * 5;
 		}			
 	}
 	
