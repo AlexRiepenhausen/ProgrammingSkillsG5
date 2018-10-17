@@ -92,6 +92,7 @@ public class Landscape {
 		return currentGrid[0].length;
 	}
 	
+	
 	/** prints the landscape onto the command line for debugging purposes */
 	public void printLandscape() {	
 		
@@ -128,5 +129,9 @@ public class Landscape {
 
 
 	}//printLandscape
+	
+	public int getNumberOfSurroundingLandSquares(int x, int y) {
+		return 0;
+	}
 	
 }

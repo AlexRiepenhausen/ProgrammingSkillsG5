@@ -6,10 +6,10 @@ public class GridSquare {
 	GridSquareType gridSquareType;
 	
 	/** The density of hares (H) */
-	double hares;
+	public double hares;
 	
 	/** The density of pumas (P) */
-	double pumas;
+	public double pumas;
 	
 	/**
 	 * Generate a Grid Square object and if the square is Land 
@@ -42,5 +42,6 @@ public class GridSquare {
 	static public GridSquare generateGridSquareFromStr(String gridType) {
 		return new GridSquare(GridSquareType.setValue(gridType));
 	}
+	
 }
 

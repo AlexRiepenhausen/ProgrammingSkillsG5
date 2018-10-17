@@ -1,6 +1,6 @@
 package operation;
 
-import world.Landscape;
+import world.*;
 
 public class Processor 
 {
@@ -50,11 +50,10 @@ public class Processor
 																	+ old_Landscape.currentGrid[i][j-1].hares 
 																	+ old_Landscape.currentGrid[i][j+1].hares
 															)
-															- old_Landscape.currentGrid[i][j].surrounding_Land * buffer_hare																
+															- old_Landscape.getNumberOfSurroundingLandSquares(i,j) * buffer_hare	//number of surrounding land gridsquares															
 														)
 												);
 	}//population or density formula for hares
-	
 	
 	private void update_puma(int i, int j)
 	{
@@ -72,7 +71,7 @@ public class Processor
 																	+ old_Landscape.currentGrid[i][j-1].pumas 
 																	+ old_Landscape.currentGrid[i][j+1].pumas
 															)
-															- old_Landscape.currentGrid[i][j].surrounding_Land * buffer_puma																
+															- old_Landscape.getNumberOfSurroundingLandSquares(i,j) * buffer_puma																
 														)
 												);
 	}//population or density formula for pumas
