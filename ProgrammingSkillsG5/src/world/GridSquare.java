@@ -1,8 +1,8 @@
 package world;
 
 /**
- * 
- * @author hassan
+ * This class represent the grid square, its type, the density of Hares, and the density of Pumas
+ * @author Hassan
  *
  */
 public class GridSquare {
@@ -47,6 +47,15 @@ public class GridSquare {
 	static public GridSquare generateGridSquareFromStr(String gridType) {
 		return new GridSquare(GridSquareType.setValue(gridType));
 	}
+	
+	/**
+	 * Check the type of the grid if it is a land
+	 * @return true if the grid is land or false otherwise
+	 */
+	public boolean isLand() {
+		return this.gridSquareType == GridSquareType.Land;
+	}
+
 	
 }
 
