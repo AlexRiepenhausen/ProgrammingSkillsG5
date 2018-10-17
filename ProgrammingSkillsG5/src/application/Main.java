@@ -24,6 +24,8 @@ public class Main {
     	/* print the landscape */
     	landscape.printLandscape();  
     	
+    	
+    	
     }
     
 }
