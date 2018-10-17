@@ -1,5 +1,10 @@
 package world;
 
+/**
+ * 
+ * @author hassan
+ *
+ */
 public class GridSquare {
 	
 	/** The Grid type Water(0) or Land(1) */
