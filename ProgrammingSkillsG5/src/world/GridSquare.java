@@ -1,8 +1,9 @@
 package world;
 
 /**
- * This class represent the grid square, its type, the density of Hares, and the density of Pumas
- * @author Hassan
+ * This class represent the grid square, its type, the density of Hares, 
+ * and the density of Pumas
+ * @author Team
  *
  */
 public class GridSquare {

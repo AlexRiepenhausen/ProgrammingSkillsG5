@@ -1,5 +1,10 @@
 package world;
 
+/**
+ * This class represent the landscape with all the rates values
+ * @author Team
+ *
+ */
 public class Landscape {
 	
 	/** (r) is the rate at which hares are born */
@@ -128,10 +133,26 @@ public class Landscape {
 		} 
 
 
-	}//printLandscape
+	}
 	
+	/**
+	 * This method will return the number of the surrounding lands of a specific loation
+	 * @param x axis location 
+	 * @param y axis location
+	 * @return the total number of the surrounding lands
+	 */
 	public int getNumberOfSurroundingLandSquares(int x, int y) {
-		return 0;
+		int totalNum = 0;
+		if (x > 0)
+			totalNum += this.currentGrid[x-1][y].isLand() ? 1 : 0;
+		if (x < this.currentGrid.length - 1)
+			totalNum += this.currentGrid[x+1][y].isLand() ? 1 : 0;
+		if (y > 0)
+			totalNum += this.currentGrid[x][y-1].isLand() ? 1 : 0;
+		if (y < this.currentGrid[0].length - 1)
+			totalNum += this.currentGrid[x][y+1].isLand() ? 1 : 0;
+		
+		return totalNum;
 	}
 	
 }
