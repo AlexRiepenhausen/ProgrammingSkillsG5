@@ -3,12 +3,12 @@
  * 
  */
 
-package application;
-import outputs.Out;
+package main.java.application;
+import main.java.outputs.Out;
 import java.util.UUID;
 
-import input.Parser;
-import world.Landscape;
+import main.java.input.Parser;
+import main.java.world.Landscape;
 
 public class Main {
 	

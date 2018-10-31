@@ -1,6 +1,6 @@
-package operation;
+package main.java.operation;
 
-import world.*;
+import main.java.world.*;
 
 public class Processor 
 {

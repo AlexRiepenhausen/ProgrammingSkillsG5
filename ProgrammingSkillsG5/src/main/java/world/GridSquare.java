@@ -1,4 +1,4 @@
-package world;
+package main.java.world;
 
 /**
  * 
@@ -46,6 +46,14 @@ public class GridSquare {
 	 */
 	static public GridSquare generateGridSquareFromStr(String gridType) {
 		return new GridSquare(GridSquareType.setValue(gridType));
+	}
+	
+	/**
+	 * A helper function that returns the type of the current GridSquare object
+	 * @return GridSquareType - returns either Water(0) or Land(1)
+	 */
+	public GridSquareType getGridSquareType() {
+		return this.gridSquareType;
 	}
 	
 }

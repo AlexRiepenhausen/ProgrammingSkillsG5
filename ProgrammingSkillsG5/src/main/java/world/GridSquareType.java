@@ -1,4 +1,4 @@
-package world;
+package main.java.world;
 
 public enum GridSquareType {
 	Water(0), Land(1);

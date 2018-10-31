@@ -1,4 +1,4 @@
-package world;
+package main.java.world;
 
 public class Landscape {
 	
