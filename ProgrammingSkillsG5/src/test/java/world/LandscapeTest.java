@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import main.java.input.Parser;
-import main.java.world.GridSquareType;
 import main.java.world.Landscape;
 
 /**
