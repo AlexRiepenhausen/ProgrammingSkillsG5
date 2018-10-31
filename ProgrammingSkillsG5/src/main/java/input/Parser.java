@@ -1,13 +1,11 @@
 package main.java.input;
 
-import java.io.FileNotFoundException;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.File;
 import java.util.Scanner;
-
-import javax.print.DocFlavor.URL;
 
 import main.java.world.GridSquare;
 import main.java.world.Landscape;

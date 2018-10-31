@@ -1,14 +1,15 @@
 package main.java.world;
 
 /**
- * 
- * @author hassan
+ * This class represent the grid square, its type, the density of Hares, 
+ * and the density of Pumas
+ * @author Team
  *
  */
 public class GridSquare {
 	
 	/** The Grid type Water(0) or Land(1) */
-	GridSquareType gridSquareType;
+	public GridSquareType gridSquareType;
 	
 	/** The density of hares (H) */
 	public double hares;
@@ -49,12 +50,11 @@ public class GridSquare {
 	}
 	
 	/**
-	 * A helper function that returns the type of the current GridSquare object
-	 * @return GridSquareType - returns either Water(0) or Land(1)
+	 * Check the type of the grid if it is a land
+	 * @return true if the grid is land or false otherwise
 	 */
-	public GridSquareType getGridSquareType() {
-		return this.gridSquareType;
+	public boolean isLand() {
+		return this.gridSquareType == GridSquareType.Land;
 	}
-	
 }
 

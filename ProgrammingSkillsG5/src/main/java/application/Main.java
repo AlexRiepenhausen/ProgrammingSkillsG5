@@ -4,10 +4,8 @@
  */
 
 package main.java.application;
-import main.java.outputs.Out;
-import java.util.UUID;
-
 import main.java.input.Parser;
+import main.java.outputs.Out;
 import main.java.world.Landscape;
 
 public class Main {

@@ -11,9 +11,5 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/Eclipse/eclipse/plugins/mockito-core-2.2.0.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/Eclipse/eclipse/plugins/byte-buddy-1.9.2.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/Eclipse/eclipse/plugins/byte-buddy-agent-1.9.2.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/Eclipse/eclipse/plugins/objenesis-3.0.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

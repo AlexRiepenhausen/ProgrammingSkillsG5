@@ -65,7 +65,7 @@ public class ParserTest {
 			for(int j = 0; j < sampleMap[0].length; j++) {
 				GridSquareType tile = GridSquareType.Land;
 				if(sampleMap[i][j] == 0) {tile = GridSquareType.Water;}
-				assertEquals(landscape.currentGrid[i][j].getGridSquareType(), tile);		
+				assertEquals(landscape.currentGrid[i][j].gridSquareType, tile);		
 			}
 		}
 		
