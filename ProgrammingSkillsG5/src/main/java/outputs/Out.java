@@ -35,8 +35,8 @@ public class Out {
 					image[i][j][2] = 255;
 				}
 				else {				
-					int tempGreen = (int)(((land.currentGrid[i][j].hares/(land.currentGrid[i][j].pumas+0.0001))/10)*255);
-					int tempRed = (int)(((land.currentGrid[i][j].pumas/(land.currentGrid[i][j].hares+0.0001))/10)*255);
+					int tempGreen = (int)((land.currentGrid[i][j].hares/5)*255);
+					int tempRed = (int)((land.currentGrid[i][j].pumas/5)*255);
 					image[i][j][0] = tempRed>255?255:tempRed;
 					image[i][j][1] = tempGreen>255?255:tempGreen;
 					image[i][j][2] = 0;
@@ -45,7 +45,7 @@ public class Out {
 		return image;
 	}
 	
-	public static void generatePlainPPMFile(Landscape landscape) throws Exception {
+	public static void generatePlainPPMFile(Landscape landscape, int i) throws Exception {
 				
 		int[][][]image = initImage(landscape);
 		int length = image.length;
@@ -53,7 +53,7 @@ public class Out {
 		
 		File Directory = new File("./PPM_Files");
 		if(!Directory.exists())Directory.mkdir();		
-		String file = Directory+"/"+UUID.randomUUID().toString().toUpperCase()+".ppm";
+		String file = Directory+"/"+i+".ppm";
 		
 		BufferedWriter out = new BufferedWriter(new FileWriter(file));
 
