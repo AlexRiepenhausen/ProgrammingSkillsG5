@@ -17,13 +17,38 @@ public class Main {
     	//Landscape landscape = Parser.createLandscapeFromCommandLine();
     	
     	/* Alternative: initialise new landscape manually (testing purposes) */
-    	Landscape landscape = new Landscape(1.0,1.0,1.0,1.0,1.0,1.0,1.0); 
+    	Landscape landscape = new Landscape(); 
     	
     	/* take the landscape and populate its landscape grid */
-    	Parser.populateLandscapeGridfromFile(landscape,"sample.dat");
+    	Parser.populateLandscapeGridfromFile(landscape,"islands.dat");
+    	    	
+    	/* print the landscape */
+    	//landscape.printLandscape();
+    
+    	
+
+    	
+		Out.printOutput("start");
     	
     	/* print the landscape */
-    	Processor.run(landscape, 500);
+    	
+    	for (int i=0; i<50; i++) {
+    		Processor.run(landscape, 10);    		
+    		Out.generatePlainPPMFile(landscape, i);
+    	}	
+
+
+    	/* print the landscape */
+    	//Processor.run(landscape, 500);
+    	
+		
+		//Out.generatePlainPPMFile(landscape);
+		//Out.createTempFile(500, 400);
+		
+    	Out.printOutput("finish");
+    	
+    	
+
     	
     }
     

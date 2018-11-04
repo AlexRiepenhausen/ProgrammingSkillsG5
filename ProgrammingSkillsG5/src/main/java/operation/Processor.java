@@ -20,8 +20,6 @@ public class Processor
 		old_Landscape = landscape;
 		new_Landscape = landscape;
 		
-		System.out.println("Simulation starts ...");
-		
 		// run the simulation the amount of time steps specified
 		for (int k = 0; k < total_time_steps; k++) {
 			
@@ -35,10 +33,7 @@ public class Processor
 				}
 			}	
 			
-		}
-		
-		System.out.println("Simulation finished");
-		
+		}		
 	}
 	
 	/**
