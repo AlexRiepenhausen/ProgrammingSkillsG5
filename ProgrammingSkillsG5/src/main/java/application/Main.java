@@ -26,6 +26,14 @@ public class Main {
     	//landscape.printLandscape();
     
     	
+    	/* print the landscape */
+    	//Processor.run(landscape, 500);
+
+
+    	/* print the landscape */
+    	//Processor.run(landscape, 500);
+    	
+    	
 		Out.printOutput("start");
 		
 		Out.generatePlainPPMFile(landscape);
@@ -33,17 +41,8 @@ public class Main {
 		
     	Out.printOutput("finish");
     	
-<<<<<<< HEAD
-<<<<<<< HEAD
     	
-=======
-    	/* print the landscape */
-    	Processor.run(landscape, 500);
->>>>>>> master
-=======
-    	/* print the landscape */
-    	Processor.run(landscape, 500);
->>>>>>> master
+
     	
     }
     
