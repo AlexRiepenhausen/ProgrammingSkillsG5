@@ -7,6 +7,7 @@ package main.java.application;
 import main.java.input.Parser;
 import main.java.outputs.Out;
 import main.java.world.Landscape;
+import main.java.operation.*;
 
 public class Main {
 	
@@ -21,10 +22,8 @@ public class Main {
     	/* take the landscape and populate its landscape grid */
     	Parser.populateLandscapeGridfromFile(landscape,"sample.dat");
     	
-    	Out.printOutput("Hello World");
-    	
     	/* print the landscape */
-    	landscape.printLandscape();
+    	Processor.run(landscape, 500);
     	
     }
     

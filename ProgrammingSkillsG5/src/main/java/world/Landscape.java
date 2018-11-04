@@ -136,7 +136,7 @@ public class Landscape {
 	}
 	
 	/**
-	 * This method will return the number of the surrounding lands of a specific loation
+	 * This method will return the number of the surrounding lands of a specific location
 	 * @param x axis location 
 	 * @param y axis location
 	 * @return the total number of the surrounding lands
