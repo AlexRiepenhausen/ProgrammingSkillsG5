@@ -7,6 +7,7 @@ package main.java.application;
 import main.java.input.Parser;
 import main.java.outputs.Out;
 import main.java.world.Landscape;
+import main.java.operation.*;
 
 public class Main {
 	
@@ -32,7 +33,12 @@ public class Main {
 		
     	Out.printOutput("finish");
     	
+<<<<<<< HEAD
     	
+=======
+    	/* print the landscape */
+    	Processor.run(landscape, 500);
+>>>>>>> master
     	
     }
     
