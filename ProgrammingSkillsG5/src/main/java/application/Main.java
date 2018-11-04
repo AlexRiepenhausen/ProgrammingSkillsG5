@@ -34,7 +34,12 @@ public class Main {
     	Out.printOutput("finish");
     	
 <<<<<<< HEAD
+<<<<<<< HEAD
     	
+=======
+    	/* print the landscape */
+    	Processor.run(landscape, 500);
+>>>>>>> master
 =======
     	/* print the landscape */
     	Processor.run(landscape, 500);
