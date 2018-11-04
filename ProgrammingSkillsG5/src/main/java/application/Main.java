@@ -19,12 +19,20 @@ public class Main {
     	Landscape landscape = new Landscape(1.0,1.0,1.0,1.0,1.0,1.0,1.0); 
     	
     	/* take the landscape and populate its landscape grid */
-    	Parser.populateLandscapeGridfromFile(landscape,"sample.dat");
-    	
-    	Out.printOutput("Hello World");
-    	
+    	Parser.populateLandscapeGridfromFile(landscape,"sample500x400.dat");
+    	    	
     	/* print the landscape */
-    	landscape.printLandscape();
+    	//landscape.printLandscape();
+    
+    	
+		Out.printOutput("start");
+		
+		Out.generatePlainPPMFile(landscape);
+		//Out.createTempFile(500, 400);
+		
+    	Out.printOutput("finish");
+    	
+    	
     	
     }
     
