@@ -22,19 +22,14 @@ public class Main {
     	/* take the landscape and populate its landscape grid */
     	Parser.populateLandscapeGridfromFile(landscape,"islands.dat");
     	    	
-    	/* print the landscape */
-    	//landscape.printLandscape();
-    
-		Out.printOutput("start");
-    	
-    	/* print the landscape */
-		
-        long start = System.currentTimeMillis();
+
+      long start = System.currentTimeMillis();
     	
     	for (int i=0; i<50; i++) {
     		Processor.run(landscape, 10);
-			Processor.printAnimalAverages(i);
+			  Processor.printAnimalAverages(i);
     		Out.generatePlainPPMFile(landscape, i);
+
     	}
     	
         long finish = System.currentTimeMillis();
@@ -45,12 +40,6 @@ public class Main {
 
     	/* print the landscape */
     	//Processor.run(landscape, 500);
-    	
-		
-		//Out.generatePlainPPMFile(landscape);
-		//Out.createTempFile(500, 400);
-		
-    	Out.printOutput("finish");
     	
     }
     
