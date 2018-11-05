@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"application"},{"l":"input"},{"l":"inputTests"},{"l":"operation"},{"l":"world"}]
+packageSearchIndex = [{"l":"main.java.application"},{"l":"main.java.input"},{"l":"main.java.operation"},{"l":"main.java.outputs"},{"l":"main.java.world"},{"l":"test.java.input"},{"l":"test.java.operation"},{"l":"test.java.world"}]

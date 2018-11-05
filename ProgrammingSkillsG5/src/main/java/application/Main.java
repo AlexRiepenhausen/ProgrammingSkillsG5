@@ -17,21 +17,26 @@ public class Main {
     	//Landscape landscape = Parser.createLandscapeFromCommandLine();
     	
     	/* Alternative: initialise new landscape manually (testing purposes) */
-    	Landscape landscape = new Landscape(); 
+    	Landscape landscape = new Landscape(0.08,0.04,0.001,0.5,0.2,0.2,0.4); 
     	
     	/* take the landscape and populate its landscape grid */
     	Parser.populateLandscapeGridfromFile(landscape,"islands.dat");
     	    	
-    	/* print the landscape */
-    	
-    	System.out.println("start");
+
+      long start = System.currentTimeMillis();
     	
     	for (int i=0; i<50; i++) {
-    		Processor.run(landscape, 10);    		
+    		Processor.run(landscape, 10);
+			  Processor.printAnimalAverages(i);
     		Out.generatePlainPPMFile(landscape, i);
-    	}	
 
-    	System.out.println("finish");
+    	}
+    	
+        long finish = System.currentTimeMillis();
+        
+        double seconds = (double)(finish-start)/1000.0;
+        		
+        System.out.format("Total time taken: %.2f seconds\n", seconds);
 
     	/* print the landscape */
     	//Processor.run(landscape, 500);
