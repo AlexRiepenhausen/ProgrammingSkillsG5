@@ -128,7 +128,7 @@ public class Parser {
 		
 		try {initBuffRead(file_name);
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			System.err.println(e.getLocalizedMessage());
 			return;
 		}
 				
