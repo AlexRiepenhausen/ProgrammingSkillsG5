@@ -12,13 +12,13 @@ import main.java.world.Landscape;
 
 public class Parser {
 	
-	public static BufferedReader b_read;
+	private static BufferedReader b_read;
 	
 	/**
 	 * Instantiates global variable b_read of type BufferedReader
 	 * @param  String - file name of the file in question without path
 	 */	
-	public static void initBuffRead(String file_name) throws FileNotFoundException {
+	private static void initBuffRead(String file_name) throws FileNotFoundException {
 		
 		System.out.println("Reading file ...");
 		File landscape_file = new File("src/main/resources/" + file_name);	
@@ -82,7 +82,7 @@ public class Parser {
 	 * @param Scanner - current scanner taking user response after the prompt
 	 * @return String - the command line input after the prompt in form of a string
 	 */	
-	public static String parseVariableFromCommandLine(String prompt, Scanner scanner) {
+	private static String parseVariableFromCommandLine(String prompt, Scanner scanner) {
 		System.out.print(prompt);
 		return scanner.next();
 	}
@@ -91,7 +91,7 @@ public class Parser {
 	 * @param String   - user input from command line
 	 * @return Boolean - true if said input can be safely converted to a double, false otherwise
 	 */	
-	public static boolean isDouble(String input) {
+	private static boolean isDouble(String input) {
 		
         try {
             double number = Double.parseDouble(input);
@@ -106,7 +106,7 @@ public class Parser {
 	 * @param Double   - map parameter in question
 	 * @return Boolean - true if within specified boundary, false otherwise
 	 */	
-	public static boolean withinBoundary(double val) {
+	private static boolean withinBoundary(double val) {
 		
 		if(val < 0.0) {return false;}
 		else if(val > 5.0) {return false;}	
@@ -155,7 +155,7 @@ public class Parser {
 	 * @param Int       - length of the landscape grid
 	 * @param Int       - width of the landscape grid
 	 */			
-	public static void linesToGrid(Landscape landscape, int length, int width) {
+	private static void linesToGrid(Landscape landscape, int length, int width) {
 		
 		String nextline[];
 		
@@ -182,7 +182,7 @@ public class Parser {
 	 * @param Landscape - a landscape object with an already existing LandscapeGrid
 	 * @param String[]  - String array containing lines
 	 */			
-	public static void linesToGrid(Landscape landscape, String[] lines) {
+	private static void linesToGrid(Landscape landscape, String[] lines) {
 		
 		String[] nextline;
 		
@@ -203,7 +203,7 @@ public class Parser {
 	/**
 	 * @return next line of BuffereReader in form of String array with blank space set as delimiter
 	 */			
-	public static String[] getNextLine() throws IOException{
+	private static String[] getNextLine() throws IOException{
 		return b_read.readLine().split(" ");
 	}
 	

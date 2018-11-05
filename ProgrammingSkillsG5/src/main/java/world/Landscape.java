@@ -27,6 +27,12 @@ public class Landscape {
 	
 	/** (delta t) is the size of the time step */
 	public final double size_time_step;
+	
+	/** the total amount of water tiles */
+	private int numberOfWaterGridSquares;
+	
+	/** the total amount of land tiles*/
+	private int numberOfLandGridSquares;
 		
 	/** 2D array GridSquare later */
 	public GridSquare currentGrid[][]; //land == 1; water == 0
@@ -57,7 +63,9 @@ public class Landscape {
 		this.mortality_rate_pumas             = mortality_rate_pumas;
 		this.diffusion_rate_hares             = diffusion_rate_hares;
 		this.diffusion_rate_pumas             = diffusion_rate_pumas;
-		this.size_time_step                   = size_time_step;
+		this.size_time_step                   = size_time_step;	
+		this.numberOfWaterGridSquares         = 0;
+		this.numberOfLandGridSquares          = 0;
 		
 	}
 	
@@ -80,6 +88,56 @@ public class Landscape {
 			/* diffusion_rate_hares */ 0.2,
 			/* diffusion_rate_pumas */ 0.2,
 			/* size_time_step */ 0.4);		
+		this.numberOfWaterGridSquares = 0;
+		this.numberOfLandGridSquares  = 0;
+	}
+	
+	/**
+	 * @return Integer - total number of Water GridSquares
+	 */
+	public int getNumberOfWaterGridSquares() {
+		
+		if(this.numberOfWaterGridSquares == 0) {
+			
+			for(int i = 0; i < getLandscapeLength(); i++) {
+				for(int j = 0; j < getLandscapeWidth(); j++) {
+					if(!this.currentGrid[i][j].isLand()) {
+						this.numberOfWaterGridSquares++;
+					}
+				}
+			}
+			
+			return this.numberOfWaterGridSquares;
+			
+		}
+		else {
+			return this.numberOfWaterGridSquares;
+		}
+		
+	}
+	
+	/**
+	 * @return Integer - total number of Land GridSquares
+	 */	
+	public int getNumberOfLandGridSquares() {
+		
+		if(this.numberOfLandGridSquares == 0) {
+			
+			for(int i = 0; i < getLandscapeLength(); i++) {
+				for(int j = 0; j < getLandscapeWidth(); j++) {
+					if(this.currentGrid[i][j].isLand()) {
+						this.numberOfLandGridSquares++;
+					}
+				}
+			}
+			
+			return this.numberOfLandGridSquares;
+			
+		}
+		else {
+			return this.numberOfLandGridSquares;
+		}
+		
 	}
 	
 	/**
@@ -93,7 +151,6 @@ public class Landscape {
 	 * @return width (columns) of the landscape in grid squares 
 	 */
 	public int getLandscapeWidth() {
-		
 		return currentGrid[0].length;
 	}
 	

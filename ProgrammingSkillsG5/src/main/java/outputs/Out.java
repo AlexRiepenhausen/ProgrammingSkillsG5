@@ -45,6 +45,17 @@ public class Out {
 		return image;
 	}
 	
+	private static String fileNameNumberFormat(int i) {
+		
+		String name = Integer.toString(i);
+		while(name.length() < 5) {
+			name = "0" + name;
+		}
+		
+		return name;
+		
+	}
+	
 	public static void generatePlainPPMFile(Landscape landscape, int i) throws Exception {
 				
 		int[][][]image = initImage(landscape);
@@ -53,7 +64,7 @@ public class Out {
 		
 		File Directory = new File("./PPM_Files");
 		if(!Directory.exists())Directory.mkdir();		
-		String file = Directory+"/"+i+".ppm";
+		String file = Directory+"/"+fileNameNumberFormat(i)+".ppm";
 		
 		BufferedWriter out = new BufferedWriter(new FileWriter(file));
 
