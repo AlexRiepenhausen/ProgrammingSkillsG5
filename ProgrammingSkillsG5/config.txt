@@ -1,0 +1,8 @@
+input_file:src/main/resources/islands.dat
+birth_rate_hares:0.08
+predation_rate:0.04
+birth_rate_pumas_per_hare_eaten:0.02
+mortality_rate_pumas:0.06
+diffusion_rate_hares:0.2
+diffusion_rate_pumas:0.2
+size_time_step:0.4
