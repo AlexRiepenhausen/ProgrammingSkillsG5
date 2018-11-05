@@ -4,22 +4,32 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
-import java.util.UUID;
-
 import main.java.world.Landscape;
 
 /**
  * 
  * @author Almas
+ * Class for generating PPM files
  *
  */
 public class Out {
-	
-	protected static void writeLine(BufferedWriter out, String line) throws Exception
+	/**
+	 * 
+	 * @param bufferedWriter object of BufferedWriter, used to write "line" 
+	 * @param line String to be written by bufferedWriter
+	 * @throws Exception Exception that can be thrown
+	 */
+	protected static void writeLine(BufferedWriter bufferedWriter, String line) throws Exception
 	{
-		out.write(line, 0, line.length());
-		out.newLine();
+		bufferedWriter.write(line, 0, line.length());
+		bufferedWriter.newLine();
 	}	
+	/**
+	 * method converting object of class Landscape to int[][][] for further printing as image
+	 * 
+	 * @param land object of class Landscape that must be converted to int[][][]
+	 * @return
+	 */
 	protected static int[][][] initImage(Landscape land) {
 		
 	    int length = land.getLandscapeLength(); //width
@@ -45,6 +55,13 @@ public class Out {
 		return image;
 	}
 	
+	/**
+	 * 
+	 * @param landscape landscape to be printed as image
+	 * @param i name of image file
+	 * @throws Exception Exception that can be thrown
+	 * 
+	 */
 	public static void generatePlainPPMFile(Landscape landscape, int i) throws Exception {
 				
 		int[][][]image = initImage(landscape);
@@ -69,6 +86,12 @@ public class Out {
 
 		out.close();
 	}
+	/**
+	 * temporary method for creating input lanscape file
+	 * @param length length of landscape
+	 * @param width width of landscape
+	 * @throws Exception Exception that can be thrown
+	 */
 	public static void createTempFile(int length, int width) throws Exception {
 		
 		PrintWriter out = new PrintWriter(new File("sample"+length+"x"+width+".dat"));
@@ -86,7 +109,5 @@ public class Out {
 		out.flush();
 		out.close();
 	}
-	public static void printOutput(String str) {
-		System.out.println(str);
-	}
+	
 }

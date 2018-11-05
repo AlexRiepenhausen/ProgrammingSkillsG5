@@ -23,32 +23,18 @@ public class Main {
     	Parser.populateLandscapeGridfromFile(landscape,"islands.dat");
     	    	
     	/* print the landscape */
-    	//landscape.printLandscape();
-    
     	
-
-    	
-		Out.printOutput("start");
-    	
-    	/* print the landscape */
+    	System.out.println("start");
     	
     	for (int i=0; i<50; i++) {
     		Processor.run(landscape, 10);    		
     		Out.generatePlainPPMFile(landscape, i);
     	}	
 
+    	System.out.println("finish");
 
     	/* print the landscape */
     	//Processor.run(landscape, 500);
-    	
-		
-		//Out.generatePlainPPMFile(landscape);
-		//Out.createTempFile(500, 400);
-		
-    	Out.printOutput("finish");
-    	
-    	
-
     	
     }
     
