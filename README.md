@@ -101,6 +101,9 @@ TestApplication:
     [junit] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
     [junit] Running test.java.world.LandscapeTest
     [junit] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+    [junit] Running test.java.outputs.OutTest
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+
 
 BUILD SUCCESSFUL
 ```
