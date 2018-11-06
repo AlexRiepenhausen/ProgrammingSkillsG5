@@ -1,11 +1,10 @@
 package test.java.input;
 
-import org.junit.Test;
-
-import org.junit.runner.RunWith;
-import org.junit.runners.BlockJUnit4ClassRunner;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -16,11 +15,14 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Scanner;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.BlockJUnit4ClassRunner;
+
 import main.java.input.Parser;
-import main.java.operation.Processor;
 import main.java.world.GridSquare;
-import main.java.world.Landscape;
 import main.java.world.GridSquareType;
+import main.java.world.Landscape;
 
 /**
  * 
@@ -89,7 +91,7 @@ public class ParserTest {
 		
 		b_read.set(BufferedReader.class, null);	
 
-		initBuffRead.invoke(String.class,"sample_orig.dat");
+		initBuffRead.invoke(String.class,"src/test/resources/sample_orig.dat");
 		assertNotNull(b_read);
 		
 	}
@@ -172,7 +174,7 @@ public class ParserTest {
 		getNextLine.setAccessible(true);
 		
 		initBuffRead.invoke(String.class, "WRONGFILENAME");
-		getNextLine.invoke(Object.class, null);
+		getNextLine.invoke(Object.class);
 	
 	}
 	
@@ -190,16 +192,16 @@ public class ParserTest {
 		
 		b_read.set(BufferedReader.class, null);		
 		
-		initBuffRead.invoke(String.class, "sample_orig.dat");
+		initBuffRead.invoke(String.class, "src/test/resources/sample_orig.dat");
 		
-		assertNotNull(getNextLine.invoke(Object.class,null));
+		assertNotNull(getNextLine.invoke(Object.class));
 		//assertTrue(Parser.getNextLine().getClass().isArray());
 	}
 	
 	@Test
 	public void populateLandscapeGridfromFileProperFile() {
 		Landscape landscape = new Landscape();
-		Parser.populateLandscapeGridfromFile(landscape,"sample_orig.dat");
+		Parser.populateLandscapeGridfromFile(landscape,"src/test/resources/sample_orig.dat");
 		assertNotNull(landscape.currentGrid);
 	}
 	
@@ -213,7 +215,7 @@ public class ParserTest {
 	@Test
 	public void populateLandscapeGridfromFileCheckResult() {
 		Landscape landscape = new Landscape();
-		Parser.populateLandscapeGridfromFile(landscape,"sample_orig.dat");
+		Parser.populateLandscapeGridfromFile(landscape,"src/test/resources/sample_orig.dat");
 		assertNotNull(landscape.currentGrid);	
 		assertTrue(landscape.getLandscapeLength() > 0.0);
 		assertTrue(landscape.getLandscapeWidth() > 0.0);

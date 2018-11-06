@@ -12,8 +12,19 @@ import main.java.world.Landscape;
 
 public class Parser {
 	
-	private static BufferedReader b_read;
+	// Config File constants
+	public static final String CONFIG_INPUT_FILE = "input_file";
+	public static final String CONFIG_BIRTH_RATE_HARES = "birth_rate_hares";
+	public static final String CONFIG_PREDATION_RATE = "predation_rate";
+	public static final String CONFIG_BIRTH_RATE_PUMAS_PER_HARE_EATEN = "birth_rate_pumas_per_hare_eaten";
+	public static final String CONFIG_MORTALITY_RATE_PUMAS = "mortality_rate_pumas";
+	public static final String CONFIG_DIFFUSION_RATE_HARES = "diffusion_rate_hares";
+	public static final String CONFIG_DIFFUSION_RATE_PUMAS = "diffusion_rate_pumas";
+	public static final String CONFIG_SIZE_TIME_STEP = "size_time_step";
+	///////////////////////
 	
+	public static BufferedReader b_read;
+
 	/**
 	 * Instantiates global variable b_read of type BufferedReader
 	 * @param  String - file name of the file in question without path
@@ -21,7 +32,7 @@ public class Parser {
 	private static void initBuffRead(String file_name) throws FileNotFoundException {
 		
 		System.out.println("Reading file ...");
-		File landscape_file = new File("src/main/resources/" + file_name);	
+		File landscape_file = new File(file_name);	
 		FileReader f_read   = new FileReader(landscape_file);
 		
 		b_read = new BufferedReader(f_read);	
@@ -34,7 +45,7 @@ public class Parser {
 	 */	
 	public static Landscape createLandscapeFromCommandLine() {
 
-		String[] str_inputs = new String[7];		
+		String[] str_inputs = new String[8];		
 		double[] dbl_inputs = new double[7];		
 		
 		String[] prompts = {"Enter the rate at which hares are born:       ",
@@ -43,7 +54,8 @@ public class Parser {
 							"Enter the puma mortality rate:                ",
 							"Enter the diffusion rate for hares:           ",
 							"Enter the diffusion rate for pumas:           ",
-							"Enter the size of the time step:              "};
+							"Enter the size of the time step:              ",
+							"Please enter the input file path:			   "};
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -64,17 +76,102 @@ public class Parser {
 			}
 			
 		}
+		// Get the file name
+		str_inputs[7] = parseVariableFromCommandLine(prompts[7], scanner);
 		
 		scanner.close();
 		
-		return new Landscape(dbl_inputs[0],
-							 dbl_inputs[1],
-							 dbl_inputs[2],
-							 dbl_inputs[3],
-							 dbl_inputs[4],
-							 dbl_inputs[5],
-							 dbl_inputs[6]);
+		Landscape landscape = new Landscape(dbl_inputs[0],
+				 dbl_inputs[1],
+				 dbl_inputs[2],
+				 dbl_inputs[3],
+				 dbl_inputs[4],
+				 dbl_inputs[5],
+				 dbl_inputs[6]);
+		
+		Parser.populateLandscapeGridfromFile(landscape, str_inputs[7]);
+		
+		return landscape;
 							 
+	}
+	
+	public static Landscape createLandscapefromConfigFile(String configFile) {
+		String line = null;		
+		BufferedReader config_b_read = null;
+		Landscape landscape = null;
+		
+		try {
+			System.out.println("Reading config file ...");
+			File config_file = new File(configFile);	
+			FileReader f_read   = new FileReader(config_file);
+			config_b_read = new BufferedReader(f_read);	
+			
+		} catch (FileNotFoundException e) {
+			System.err.println(e.getLocalizedMessage());
+			return null;
+		}
+
+		try {
+			String[] values;
+			String inputFilename = null;
+			double birth_rate_hares = 0;
+			double predation_rate = 0;		
+			double birth_rate_pumas_per_hare_eaten = 0;
+			double mortality_rate_pumas = 0;
+			double diffusion_rate_hares = 0;
+			double diffusion_rate_pumas = 0;
+			double size_time_step = 0;
+			/*
+
+			public final String CONFIG_SIZE_TIME_STEP = "size_time_step";
+			*/
+			
+			while((line = config_b_read.readLine()) != null) {
+				values = line.split(":");
+				if (values.length == 2) {
+					if (values[0].equalsIgnoreCase(CONFIG_INPUT_FILE)) {
+						inputFilename = values[1];
+					} else if (values[0].equalsIgnoreCase(CONFIG_BIRTH_RATE_HARES)) {
+						birth_rate_hares = Double.parseDouble(values[1]);
+					} else if (values[0].equalsIgnoreCase(CONFIG_PREDATION_RATE)) {
+						predation_rate = Double.parseDouble(values[1]);
+					} else if (values[0].equalsIgnoreCase(CONFIG_BIRTH_RATE_PUMAS_PER_HARE_EATEN)) {
+						birth_rate_pumas_per_hare_eaten = Double.parseDouble(values[1]);
+					} else if (values[0].equalsIgnoreCase(CONFIG_MORTALITY_RATE_PUMAS)) {
+						mortality_rate_pumas = Double.parseDouble(values[1]);
+					} else if (values[0].equalsIgnoreCase(CONFIG_DIFFUSION_RATE_HARES)) {
+						diffusion_rate_hares = Double.parseDouble(values[1]);
+					} else if (values[0].equalsIgnoreCase(CONFIG_DIFFUSION_RATE_PUMAS)) {
+						diffusion_rate_pumas = Double.parseDouble(values[1]);
+					} else if (values[0].equalsIgnoreCase(CONFIG_SIZE_TIME_STEP)) {
+						size_time_step = Double.parseDouble(values[1]);
+					} 
+				}else {
+					System.err.println("Invalid config file!");
+					return null;
+				}
+					
+			}
+			config_b_read.close();
+			
+			if (inputFilename != null) {				
+				landscape = new Landscape(birth_rate_hares,
+								predation_rate,
+								birth_rate_pumas_per_hare_eaten,
+								mortality_rate_pumas,
+								diffusion_rate_hares,
+								diffusion_rate_pumas,
+								size_time_step);
+				
+				Parser.populateLandscapeGridfromFile(landscape, inputFilename);
+				return landscape;
+			}
+			
+		} catch (IOException e) {
+			System.err.println(e.getLocalizedMessage());
+			return null;
+		}
+		return null;
 	}
 	
 	/**
@@ -94,7 +191,7 @@ public class Parser {
 	private static boolean isDouble(String input) {
 		
         try {
-            double number = Double.parseDouble(input);
+            Double.parseDouble(input);
         } catch (NumberFormatException e) {
             return false;
         }
@@ -128,7 +225,7 @@ public class Parser {
 		
 		try {initBuffRead(file_name);
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			System.err.println(e.getLocalizedMessage());
 			return;
 		}
 				

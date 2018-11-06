@@ -13,10 +13,10 @@ public class OutTest {
 	public void generatePlainPPMFileTest() throws Exception {
 		int i=0;
 		Landscape landscape = new Landscape(); 
-    	Parser.populateLandscapeGridfromFile(landscape,"sample.dat");
+    	Parser.populateLandscapeGridfromFile(landscape,"src/test/resources/sample.dat");
 		
     	Out.generatePlainPPMFile(landscape, i);
-		File file = new File("./PPM_Files/"+i+".ppm");
+		File file = new File("./PPM_Files/"+Out.fileNameNumberFormat(i)+".ppm");
 		
 		assertTrue(file.exists());
 	}

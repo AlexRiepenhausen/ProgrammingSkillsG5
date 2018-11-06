@@ -55,7 +55,7 @@ public class Out {
 		return image;
 	}
 	
-	private static String fileNameNumberFormat(int i) {
+	public static String fileNameNumberFormat(int i) {
 		
 		String name = Integer.toString(i);
 		while(name.length() < 5) {
