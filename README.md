@@ -21,8 +21,9 @@ Qirong Wu
 * [Source code repository](https://github.com/AlexRiepenhausen/ProgrammingSkillsG5) 
 
 ### Geting the source code and the dependencies
-If you happen to have the ProgrammingSkillsG5.zip file you can skip the step below,
-otherwise login to Cirrus and download the application source code
+If you happen to have the ProgrammingSkillsG5.zip file you can skip the step below
+and simply unzip the file provided in your home directory on Cirrus,
+otherwise download the application source code from git:
 ```
 cd ~
 git clone https://github.com/AlexRiepenhausen/ProgrammingSkillsG5.git
