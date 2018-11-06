@@ -47,7 +47,7 @@ cd ~/ProgrammingSkillsG5/ProgrammingSkillsG5
 ant build -f build.xml
 
 ```
-If the build seccessful you should get 
+If the build successful you should get 
 ```
 build:
 
