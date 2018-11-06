@@ -25,7 +25,7 @@ Qirong Wu
 Login to Cirrus and download the Application source code
 ```
 cd ~
-git clone -b Hassan https://github.com/AlexRiepenhausen/ProgrammingSkillsG5.git
+git clone https://github.com/AlexRiepenhausen/ProgrammingSkillsG5.git
 
 ```
 Add execute permission for ant binaries and set the environment for the ANT 
