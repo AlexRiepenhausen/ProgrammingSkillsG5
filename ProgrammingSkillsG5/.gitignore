@@ -56,3 +56,5 @@ local.properties
 .cache-main
 .scala_dependencies
 .worksheet
+
+!apache-ant-1.10.5/**
