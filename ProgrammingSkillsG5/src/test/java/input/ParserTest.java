@@ -1,13 +1,10 @@
 package test.java.input;
 
-import org.junit.Test;
-
-import org.junit.runner.RunWith;
-import org.junit.runners.BlockJUnit4ClassRunner;
-
-import com.sun.istack.internal.localization.NullLocalizable;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -18,11 +15,14 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Scanner;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.BlockJUnit4ClassRunner;
+
 import main.java.input.Parser;
-import main.java.operation.Processor;
 import main.java.world.GridSquare;
-import main.java.world.Landscape;
 import main.java.world.GridSquareType;
+import main.java.world.Landscape;
 
 /**
  * 

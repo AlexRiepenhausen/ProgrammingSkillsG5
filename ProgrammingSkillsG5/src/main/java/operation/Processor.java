@@ -3,8 +3,8 @@ package main.java.operation;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.outputs.Out;
-import main.java.world.*;
+import main.java.world.GridSquare;
+import main.java.world.Landscape;
 
 public class Processor  {
 	

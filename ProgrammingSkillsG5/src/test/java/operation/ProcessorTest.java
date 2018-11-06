@@ -1,22 +1,22 @@
 package test.java.operation;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import main.java.input.Parser;
-import main.java.world.*;
 import main.java.operation.Processor;
+import main.java.world.GridSquare;
+import main.java.world.GridSquareType;
+import main.java.world.Landscape;
 
 public class ProcessorTest {
 	

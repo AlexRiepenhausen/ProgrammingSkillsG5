@@ -163,7 +163,7 @@ public class Parser {
 		} catch (IOException e) {
 			System.err.println(e.getLocalizedMessage());
 			return null;
-		}		
+		}
 		return null;
 	}
 	
@@ -184,7 +184,7 @@ public class Parser {
 	private static boolean isDouble(String input) {
 		
         try {
-            double number = Double.parseDouble(input);
+            Double.parseDouble(input);
         } catch (NumberFormatException e) {
             return false;
         }
