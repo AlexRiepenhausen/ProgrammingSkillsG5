@@ -16,7 +16,7 @@ public class OutTest {
     	Parser.populateLandscapeGridfromFile(landscape,"src/test/resources/sample.dat");
 		
     	Out.generatePlainPPMFile(landscape, i);
-		File file = new File("./PPM_Files/"+i+".ppm");
+		File file = new File("./PPM_Files/"+Out.fileNameNumberFormat(i)+".ppm");
 		
 		assertTrue(file.exists());
 	}

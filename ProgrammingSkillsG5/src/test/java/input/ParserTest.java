@@ -5,6 +5,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.BlockJUnit4ClassRunner;
 
+import com.sun.istack.internal.localization.NullLocalizable;
+
 import static org.junit.Assert.*;
 
 import java.io.BufferedReader;
@@ -172,7 +174,7 @@ public class ParserTest {
 		getNextLine.setAccessible(true);
 		
 		initBuffRead.invoke(String.class, "WRONGFILENAME");
-		getNextLine.invoke(Object.class, null);
+		getNextLine.invoke(Object.class);
 	
 	}
 	
@@ -192,7 +194,7 @@ public class ParserTest {
 		
 		initBuffRead.invoke(String.class, "src/test/resources/sample_orig.dat");
 		
-		assertNotNull(getNextLine.invoke(Object.class,null));
+		assertNotNull(getNextLine.invoke(Object.class));
 		//assertTrue(Parser.getNextLine().getClass().isArray());
 	}
 	
