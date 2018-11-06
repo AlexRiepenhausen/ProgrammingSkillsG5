@@ -1,5 +1,8 @@
-application
-input
-inputTests
-operation
-world
+main.java.application
+main.java.input
+main.java.operation
+main.java.outputs
+main.java.world
+test.java.input
+test.java.operation
+test.java.world

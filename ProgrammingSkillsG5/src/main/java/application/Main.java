@@ -59,27 +59,22 @@ public class Main {
     		return;
     	}
     		
+    	/* Alternative: initialise new landscape manually (testing purposes) */
+    	//Landscape landscape = new Landscape(0.08,0.04,0.001,0.5,0.2,0.2,0.4); 
     		
-		Out.printOutput("start");
+    	long start = System.currentTimeMillis();
     	
-    	/* print the landscape */
-    	
-    	for (int i=0; i<5; i++) {
-    		Processor.run(landscape, 10);    		
+    	for (int i=0; i<50; i++) {
+    		Processor.run(landscape, 10);
+			Processor.printAnimalAverages(i);
     		Out.generatePlainPPMFile(landscape, i);
-    	}	
-
-
-    	/* print the landscape */
-    	//Processor.run(landscape, 500);
+    	}
     	
-		
-		//Out.generatePlainPPMFile(landscape);
-		//Out.createTempFile(500, 400);
-		
-    	Out.printOutput("finish");
-
+        long finish = System.currentTimeMillis();
+        
+        double seconds = (double)(finish-start)/1000.0;
+        		
+        System.out.format("Total time taken: %.2f seconds\n", seconds);
     	
-    }
-    
+    }    
 }

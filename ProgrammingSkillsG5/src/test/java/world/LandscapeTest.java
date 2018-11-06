@@ -44,7 +44,7 @@ public class LandscapeTest {
 	@Test
 	public void testLandscapeLengthAndWidth() {
 		Landscape landscape = new Landscape();
-		Parser.populateLandscapeGridfromFile(landscape,"sample.dat");
+		Parser.populateLandscapeGridfromFile(landscape,"src/test/resources/sample_orig.dat");
 		assertNotNull(landscape.currentGrid);	
 		assertEquals("getLandscapeLength (rows) not as expected",
 				landscape.getLandscapeLength(), 10);
@@ -56,7 +56,7 @@ public class LandscapeTest {
 	@Test
 	public void testGetNumberOfSurroundingLand() {
 		Landscape landscape = new Landscape();
-		Parser.populateLandscapeGridfromFile(landscape,"sample.dat");
+		Parser.populateLandscapeGridfromFile(landscape,"src/test/resources/sample_orig.dat");
 		assertNotNull(landscape.currentGrid);	
 		
 		assertEquals("getNumberOfSurroundingLandSquares at [1, 1] not as expected",
