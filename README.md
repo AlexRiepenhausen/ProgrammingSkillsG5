@@ -11,7 +11,7 @@ Qirong Wu
 
 | Language  | Revision Control  | Debuggers  | Build Tool  | Test Tool  |
 |:--:|:--:|:--:|:--:|:---:|
-| Java  | github.com  | ----  | Ant  | JUnit  |
+| Java  | github.com  | Eclipse IDE  | Ant  | JUnit  |
 
 ### Prerequisites
 
