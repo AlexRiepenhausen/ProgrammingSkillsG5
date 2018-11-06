@@ -70,6 +70,7 @@
             <test name="test.java.world.GridSquareTest" todir="${junit.output.dir}"/>
             <test name="test.java.world.GridSquareTypeTest" todir="${junit.output.dir}"/>
             <test name="test.java.world.LandscapeTest" todir="${junit.output.dir}"/>
+	    <test name="test.java.outputs.OutTest" todir="${junit.output.dir}"/>
             
             <classpath refid="ProgrammingSkillsG5.classpath"/>
         </junit>
