@@ -89,6 +89,21 @@ The jUnit test cases are supplied and can be checked with this command and check
 cd ~/ProgrammingSkillsG5/ProgrammingSkillsG5
 ant TestApplication -f build.xml
 ```
+You should expect to see the result as this:
+```
+TestApplication:
+    [mkdir] Created dir: /ProgrammingSkillsG5/ProgrammingSkillsG5/junit
+    [junit] Running test.java.input.ParserTest
+    [junit] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec
+    [junit] Running test.java.world.GridSquareTest
+    [junit] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+    [junit] Running test.java.world.GridSquareTypeTest
+    [junit] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+    [junit] Running test.java.world.LandscapeTest
+    [junit] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+
+BUILD SUCCESSFUL
+```
 
 ## Summary
 
