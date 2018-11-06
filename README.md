@@ -64,7 +64,7 @@ java -classpath ./bin main.java.application.Main
 ```
 The **Second Option** is to read the parameters from a configuration file. The configuration (e.g. config.txt) file should be something like this:
 ```
-input_file:src/main/resources/sample.dat
+input_file:src/main/resources/islands.dat
 birth_rate_hares:0.08
 predation_rate:0.04
 birth_rate_pumas_per_hare_eaten:0.02
