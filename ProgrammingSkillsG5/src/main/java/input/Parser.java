@@ -45,7 +45,7 @@ public class Parser {
 	 */	
 	public static Landscape createLandscapeFromCommandLine() {
 
-		String[] str_inputs = new String[7];		
+		String[] str_inputs = new String[8];		
 		double[] dbl_inputs = new double[7];		
 		
 		String[] prompts = {"Enter the rate at which hares are born:       ",
@@ -54,7 +54,8 @@ public class Parser {
 							"Enter the puma mortality rate:                ",
 							"Enter the diffusion rate for hares:           ",
 							"Enter the diffusion rate for pumas:           ",
-							"Enter the size of the time step:              "};
+							"Enter the size of the time step:              ",
+							"Please enter the input file path:			   "};
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -75,16 +76,22 @@ public class Parser {
 			}
 			
 		}
+		// Get the file name
+		str_inputs[7] = parseVariableFromCommandLine(prompts[7], scanner);
 		
 		scanner.close();
 		
-		return new Landscape(dbl_inputs[0],
-							 dbl_inputs[1],
-							 dbl_inputs[2],
-							 dbl_inputs[3],
-							 dbl_inputs[4],
-							 dbl_inputs[5],
-							 dbl_inputs[6]);
+		Landscape landscape = new Landscape(dbl_inputs[0],
+				 dbl_inputs[1],
+				 dbl_inputs[2],
+				 dbl_inputs[3],
+				 dbl_inputs[4],
+				 dbl_inputs[5],
+				 dbl_inputs[6]);
+		
+		Parser.populateLandscapeGridfromFile(landscape, str_inputs[7]);
+		
+		return landscape;
 							 
 	}
 	
