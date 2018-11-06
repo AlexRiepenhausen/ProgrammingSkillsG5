@@ -79,7 +79,7 @@ java -classpath ./bin main.java.application.Main -config config.txt
 ```
 The **Third Option** is to specify only the input file name and the application will run with the default parameters by run this
 ```
-java -classpath ./bin main.java.application.Main -file filename.dat
+java -classpath ./bin main.java.application.Main -file src/main/resources/islands.dat
 ```
 The output files will be available for every 10 iterations in the `PPM_Files` folder.
 ### Test
