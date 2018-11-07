@@ -110,5 +110,6 @@ BUILD SUCCESSFUL
 ```
 
 ## Summary
+![Alt text](C:\Users\wuqir\OneDrive\Desktopimg.png?raw=true "ProgrammingSkillsG5_UML")
 
 Summary of key design decisions and reasons for these. 
