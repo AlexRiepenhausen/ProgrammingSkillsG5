@@ -110,6 +110,7 @@ BUILD SUCCESSFUL
 ```
 
 ## Summary
+![Alt text](C:\Users\wuqir\OneDrive\Desktopimg.png?raw=true "ProgrammingSkillsG5_UML")
 
 ### Population density lower boundary: 
 To restrict the population densities from going below zero, it is designed to have statements to reset the population density values to 0.0 automatically before every single update is complete, which is the simplest method. More advanced solutions are available, however, could lead to further undesired problems, and therefore are not chosen for implementation.
