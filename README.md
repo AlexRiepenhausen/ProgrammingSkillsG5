@@ -111,4 +111,16 @@ BUILD SUCCESSFUL
 
 ## Summary
 
-Summary of key design decisions and reasons for these. 
+### Population density lower boundary: 
+To restrict the population densities from going below zero, it is designed to have statements to reset the population density values to 0.0 automatically before every single update is complete, which is the simplest method. More advanced solutions are available, however, could lead to further undesired problems, and therefore are not chosen for implementation.
+### Provision of Landscape file: 
+The landscape file is included and packed all together with others into the zip file which is to be downloaded by the user. It is designed in this way for reasons like better portability and easier for the user to handle.
+### Robustness of the program:
+It is designed to have reduced level of robustness for this program. Once the system receives some values passed through the command line, it checks whether they are valid, which is checking the input values are convertible to the type, double, or not. If is, the values are then translated into a double type, and then processed by the system. If not, it will prompt the user to type the value again. It is designed for circumstances in which the user is familiar with or at least know how to operate this system.
+### Global variables: 
+Yes, it is OK with using global variables. Otherwise, the system would be clunky. To prevent the system from dangerous behaviors like unwanted value updates, it is designed in a way, for example, in the Processor class would have two landscape instances which both are private: old_landscape and new_landscape. During an update to the fields of the landscape which could contain global variables that the Processor is depended on, the program makes two instances of landscape and put the new values of new_landscape. Eventually, the old_landscape gets replaced by the new_landscape. 
+Visualization:
+
+
+
+
